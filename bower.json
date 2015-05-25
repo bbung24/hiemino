@@ -1,0 +1,34 @@
+{
+  "name": "hiemino",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bbung24/hiemino",
+  "authors": [
+    "Inho Yong <inhoyong@gmail.com>"
+  ],
+  "description": "Private blog",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "blog"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.15",
+    "bootstrap": "~3.3.4",
+    "moment": "~2.10.3",
+    "angular-strap": "~2.2.3",
+    "angular-messages": "~1.3.15",
+    "angular-resource": "~1.3.15",
+    "angular-route": "~1.3.15",
+    "angular-cookies": "~1.3.15",
+    "bootstrap-sass-official": "~3.3.4"
+  }
+}
