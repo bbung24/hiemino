@@ -48,7 +48,7 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 var User = mongoose.model('User', userSchema);
 var Post = mongoose.model('Post', postSchema);
 
-mongoose.connect('localhost');
+mongoose.connect('mongodb://bbung24:Dlsghek1!@ds031902.mongolab.com:31902/heroku_app37202122');
 
 app.set('port', process.env.PORT || 3000);
 app.use(logger('dev'));
