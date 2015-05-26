@@ -10,22 +10,7 @@
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="navbar navbar-default navbar-static-top"
-     role="navigation" bs-navbar>
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/">
-      <span class="glyphicon glyphicon-heart"></span>
-      Hiemino<strong>Blog</strong></a>
-  </div>
-  <ul class="nav navbar-nav">
-    <li data-match-route="/$"><a href="/">Home</a></li>
-    <li data-match-route="/post"><a href="/post">POST</a></li>
-  </ul>
-  <ul class="nav navbar-nav pull-right" ng-if="currentUser">
-    <li class="navbar-text" ng-bind="currentUser.email"></li>
-    <li><a href="javascript:void(0)" ng-click="logout()">Logout</a></li>
-  </ul>
-</div>
+
 <div ng-view></div>
 
 <script src="angular/angular.js"></script>

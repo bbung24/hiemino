@@ -4,16 +4,16 @@ angular.module('Hiemino', ['ngCookies', 'ngResource', 'ngMessages', 'ngRoute', '
 
     $routeProvider
 	  .when('/', {
-	    templateUrl: 'views/home.html',
+	    templateUrl: 'views/login.html',
+	    controller: 'LoginCtrl'
+	  })
+	  .when('/home', {
+	  	templateUrl: 'views/home.html',
 	    controller: 'MainCtrl'
 	  })
 	  .when('/posts/:id', {
 	    templateUrl: 'views/detail.html',
 	    controller: 'DetailCtrl'
-	  })
-	  .when('/login', {
-	    templateUrl: 'views/login.html',
-	    controller: 'LoginCtrl'
 	  })
 	  .when('/post', {
 	    templateUrl: 'views/post.html',
