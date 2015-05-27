@@ -54,7 +54,7 @@ if (app.get('env') === 'development') {
   mongoose.connect('mongodb://127.0.0.1/mydb');
 } else {
   console.log('production');
-  mongoose.connect('mongodb://heroku_app37202122@ds031902.mongolab.com:31902/heroku_app37202122');
+  mongoose.connect('mongodb://hiemino:hiemino@ds031902.mongolab.com:31902/heroku_app37202122');
 }
 mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Make sure MongoDB is running.')
