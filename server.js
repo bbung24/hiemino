@@ -107,23 +107,23 @@ app.post('/api/login', passport.authenticate('local'), function(req, res) {
 });
 
 
-app.get('/api/createaccount', function(req, res, next) {
-  var inhoyong = new User({
-    username: 'inhoyong',
-    password: 'lovehiemin'
-  });
-  inhoyong.save(function(err) {
-    if (err) return next(err);
-    var hieminhan = new User({
-      username: 'hieminhan',
-      password: 'loveinho'
-    });
-    hieminhan.save(function(err) {
-      if (err) return next(err);
-      res.sendStatus(200);
-    })
-  });
-});
+// app.get('/api/createaccount', function(req, res, next) {
+//   var inhoyong = new User({
+//     username: 'inhoyong',
+//     password: 'lovehiemin'
+//   });
+//   inhoyong.save(function(err) {
+//     if (err) return next(err);
+//     var hieminhan = new User({
+//       username: 'hieminhan',
+//       password: 'loveinho'
+//     });
+//     hieminhan.save(function(err) {
+//       if (err) return next(err);
+//       res.sendStatus(200);
+//     })
+//   });
+// });
 
 app.get('/api/logout', function(req, res, next) {
   req.logout();
