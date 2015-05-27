@@ -125,12 +125,12 @@ app.post('/api/login', passport.authenticate('local'), function(req, res) {
 //   });
 // });
 
-app.get('/api/logout', function(req, res, next) {
+app.get('/api/logout', ensureAuthenticated, function(req, res, next) {
   req.logout();
   res.sendStatus(200);
 });
 
-app.get('/api/posts', function(req, res, next) {
+app.get('/api/posts', ensureAuthenticated, function(req, res, next) {
   var query = Post.find();
   if (req.query.category) {
     query.where({ category: req.query.category });
@@ -145,14 +145,14 @@ app.get('/api/posts', function(req, res, next) {
   });
 });
 
-app.get('/api/posts/:id', function(req, res, next) {
+app.get('/api/posts/:id', ensureAuthenticated, function(req, res, next) {
   Post.findById(req.params.id, function(err, post) {
     if (err) return next(err);
     res.send(post);
   });
 });
 
-app.get('*', function(req, res) {
+app.get('*', ensureAuthenticated, function(req, res) {
   res.redirect('/#' + req.originalUrl);
 });
 
@@ -167,6 +167,6 @@ app.listen(app.get('port'), function() {
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) next();
-  else res.sendStatus(401);
+  else res.redirect('/');
 }
 
