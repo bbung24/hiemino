@@ -8,6 +8,7 @@ var bcrypt = require('bcryptjs');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var compress = require('compression');
 
 var app = express();
 
@@ -61,6 +62,7 @@ mongoose.connection.on('error', function() {
 });
 
 app.set('port', process.env.PORT || 3000);
+app.use(compress());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
@@ -69,9 +71,9 @@ app.use(session({ secret: 'sleocvreehtileymin' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.static(path.join(__dirname, 'public', 'views')));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'bower_components')));
+app.use(express.static(path.join(__dirname, 'public', 'views'), { maxAge: 86400000 }));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 86400000 }));
+app.use(express.static(path.join(__dirname, 'bower_components'), { maxAge: 86400000 }));
 app.use(function(req, res, next) {
   if (req.user) {
     res.cookie('user', JSON.stringify(req.user));
