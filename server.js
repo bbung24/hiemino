@@ -176,7 +176,7 @@ app.post('/api/posts', ensureAuthenticated, function(req, res, next) {
     // category: [{
     //   type: mongoose.Schema.Types.ObjectId, ref: 'Category'
     // }],
-    content: req.body.content.trim(),
+    content: req.body.content,
     poster: req.user._id,
     date: new Date()
   });
