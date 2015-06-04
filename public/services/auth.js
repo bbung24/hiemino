@@ -16,7 +16,7 @@ angular.module('Hiemino')
                 content: 'You have successfully logged in.',
                 placement: 'top-right',
                 type: 'success',
-                duration: 10
+                duration: 5
               });
             })
             .error(function() {
@@ -25,7 +25,7 @@ angular.module('Hiemino')
                 content: 'Invalid username or password.',
                 placement: 'top-right',
                 type: 'danger',
-                duration: 10
+                duration: 5
               });
             });
         },
@@ -34,12 +34,12 @@ angular.module('Hiemino')
             $rootScope.currentUser = null;
             $cookieStore.remove('user');
             $location.path('/');
-            
+
             $alert({
               content: 'You have been logged out.',
               placement: 'top-right',
               type: 'info',
-              duration: 10
+              duration: 5
             });
           });
         }

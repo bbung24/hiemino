@@ -24,6 +24,7 @@ gulp.task('compress', function() {
     'bower_components/angular-route/angular-route.js',
     'bower_components/angular-cookies/angular-cookies.js',
     'bower_components/moment/min/moment.min.js',
+    'bower_components/angular-moment/angular-moment.min.js',
     'public/app.js',
     'public/services/*.js',
     'public/controllers/*.js'

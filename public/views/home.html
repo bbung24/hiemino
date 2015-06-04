@@ -2,11 +2,6 @@
 
 <div class="jumbotron">
   <div class="container">
-    <ul class="alphabet">
-      <li ng-repeat="char in alphabet">
-        <span ng-click="filterByAlphabet(char)">{{char}}</span>
-      </li>
-    </ul>
     <ul class="categories">
       <li ng-repeat="category in categories">
         <span ng-click="filterByCategory(category)">{{category}}</span>
@@ -23,18 +18,20 @@
         <input class="search" type="text" ng-model="query.name" placeholder="Search...">
       </div>
     </div>
-    <div class="panel-body">
-      <div class="row post-list">
-        <div class="col-xs-4 col-md-3" ng-repeat="post in posts | filter:query | orderBy:'rating':true">
-          <a href="/posts/{{post._id}}">{{post.title}}
-            <img class="img-rounded" ng-src="{{post.poster}}" width="100%"/>
-          </a>
+    <div class="panel-body list-group">
+      <ul>
+        <div class="row post-list" ng-repeat="post in posts | filter:query | orderBy:'date':reverse">
+          <li class="list-group-item">
+            <h3>{{post.title}}
+              <small> {{post.poster.username}} </small>
+            </h3>
+            <small class="text-right text-muted">Date: {{post.date | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a'}}</small>
+          </li>
           <div class="text-center">
-            <a href="/posts/{{post._id}}">{{post.title}}</a>
-            <p class="text-muted">Writer: {{post.poster.nickname}}</p>
+            <p>{{post.content}}</p>
           </div>
         </div>
-      </div>
+      </ul>
     </div>
   </div>
 </div>

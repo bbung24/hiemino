@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
 
 $icon-font-path: '/bootstrap-sass-official/assets/fonts/bootstrap/';
 $body-bg: #e4e7ec;
@@ -238,4 +238,8 @@ em {
 .banner:hover {
   color: #FF7D39;
   background-color: #333;
+}
+
+.text-inline {
+  display: inline;
 }

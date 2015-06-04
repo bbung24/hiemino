@@ -7,6 +7,7 @@
     "start": "NODE_ENV=production node ./server.js"
   },
   "dependencies": {
+    "async": "^1.2.0",
     "bcryptjs": "^2.1.0",
     "body-parser": "~1.12.4",
     "bower": "^1.4.1",

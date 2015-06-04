@@ -1,12 +1,13 @@
 angular.module('Hiemino')
   .controller('PostCtrl', ['$scope', '$alert', 'Post', function($scope, $alert, Post) {
     $scope.addPost = function() {
-      Post.save({ title: $scope.title },
+      Post.save({ title: $scope.title, content: $scope.content },
         function() {
-          $scope.title = '';
+          $scope.title='';
+          $scope.content='';
           $scope.addForm.$setPristine();
           $alert({
-            content: 'TV show has been added.',
+            content: 'Post has been added.',
             placement: 'top-right',
             type: 'success',
             duration: 3
@@ -14,6 +15,7 @@ angular.module('Hiemino')
         },
         function(response) {
           $scope.title = '';
+          $scope.content = '';
           $scope.addForm.$setPristine();
           $alert({
             content: response.data.message,
