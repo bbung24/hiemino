@@ -20,7 +20,7 @@
     </div>
     <div class="panel-body list-group">
       <ul>
-        <div class="row post-list" ng-repeat="post in posts | filter:query | orderBy:'date':reverse">
+        <div class="row post-list" ng-repeat="post in posts | filter:query | orderBy:'date':true">
           <li class="list-group-item">
             <h3>{{post.title}}
               <small> {{post.poster.username}} </small>
