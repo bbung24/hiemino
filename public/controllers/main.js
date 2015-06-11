@@ -12,5 +12,5 @@ angular.module('Hiemino')
       $scope.posts = Post.query({ category: category });
       $scope.headingTitle = category;
     };
-
+    
   }]);
