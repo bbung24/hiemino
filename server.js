@@ -189,6 +189,18 @@ app.post('/api/posts', ensureAuthenticated, function(req, res, next) {
   });
 });
 
+// delete a post
+app.delete('/api/posts/:id', ensureAuthenticated, function(req, res, next) {
+    Post.remove({
+      _id : req.params.id
+    }, function(err, post) {
+      if (err) {
+        return next(err);
+      }
+      res.sendStatus(200);
+    });
+});
+
 app.get('/api/posts/:id', ensureAuthenticated, function(req, res, next) {
   Post.findById(req.params.id, function(err, post) {
     if (err) return next(err);
