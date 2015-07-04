@@ -152,7 +152,7 @@ app.get('/api/logout', ensureAuthenticated, function(req, res, next) {
 });
 
 app.get('/api/posts', ensureAuthenticated, function(req, res, next) {
-  var query = Post.find();
+  var query = Post.find().sort({date:-1});
   if (req.query.category) {
     query.where({ category: req.query.category });
   } 
