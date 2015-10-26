@@ -64,7 +64,7 @@ if (app.get('env') === 'development') {
   mongoose.connect('mongodb://127.0.0.1/mydb');
 } else {
   console.log('production');
-  mongoose.connect('mongodb://hiemino:hiemino@ds031902.mongolab.com:31902/heroku_app37202122');
+  // checkout node what was supposed to be here. for connecting to real db. 
 }
 mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Make sure MongoDB is running.')
@@ -125,24 +125,6 @@ app.post('/api/login', passport.authenticate('local'), function(req, res) {
 //   user.save(function(err) {
 //     if (err) return next(err);
 //     res.send(200);
-//   });
-// });
-
-// app.get('/api/createaccount', function(req, res, next) {
-//   var inhoyong = new User({
-//     username: 'inhoyong',
-//     password: 'lovehiemin'
-//   });
-//   inhoyong.save(function(err) {
-//     if (err) return next(err);
-//     var hieminhan = new User({
-//       username: 'hieminhan',
-//       password: 'loveinho'
-//     });
-//     hieminhan.save(function(err) {
-//       if (err) return next(err);
-//       res.sendStatus(200);
-//     })
 //   });
 // });
 
