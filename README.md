@@ -1,2 +1,2 @@
-# himino
+# Inoblog
 Private Blog Homepage
